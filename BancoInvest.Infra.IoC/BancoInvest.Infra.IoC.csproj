@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BancoInvest.Application\BancoInvest.Application.csproj" />
+    <ProjectReference Include="..\BancoInvest.Domain\BancoInvest.Domain.csproj" />
+    <ProjectReference Include="..\BancoInvest.Infra.Data\BancoInvest.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
