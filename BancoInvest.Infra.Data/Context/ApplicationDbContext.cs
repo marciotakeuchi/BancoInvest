@@ -18,6 +18,8 @@ namespace BancoInvest.Infra.Data.Context
        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ClienteMap());
+            modelBuilder.ApplyConfiguration(new ContaCorrenteMap());
+            modelBuilder.ApplyConfiguration(new MovimentoMap());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -16,6 +16,6 @@ namespace BancoInvest.Domain.Entities
         public string Login { get; set; }
         public string Password { get; set; }
         public bool Ativo { get; set; }
-        public List<Conta> Contas { get; set; }
+        public virtual List<Conta> Contas { get; set; }
     }
 }

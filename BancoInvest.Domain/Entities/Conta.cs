@@ -10,6 +10,6 @@
         public DateTime DataCriacao { get; set; }
         public DateTime DataAtualizacao { get; set; }
         public bool Ativo { get; set; }
-        public Cliente Cliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }
