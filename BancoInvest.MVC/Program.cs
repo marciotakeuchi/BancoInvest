@@ -1,3 +1,7 @@
+using BancoInvest.Infra.Data.Context;
+using BancoInvest.Infra.IoC;
+using Microsoft.EntityFrameworkCore;
+
 namespace BancoInvest.MVC
 {
     public class Program
@@ -6,10 +10,28 @@ namespace BancoInvest.MVC
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            
+
+            builder.AddInfrastruture();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+
+            //using (var scope = app.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
+            //    try
+            //    {
+            //        var context = services.GetRequiredService<ApplicationDbContext>();
+            //        context.Database.Migrate();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+            //        logger.LogError(ex, "ocorreu um erro na Migração ou alimentãção dos dados.");
+            //    }
+            //}
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

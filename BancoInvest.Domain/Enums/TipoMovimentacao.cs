@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BancoInvest.Domain.Entities
+namespace BancoInvest.Domain.Enums
 {
-    public class Transacao
+    public enum TipoMovimentacao
     {
+        Deposito = 1,
+        Saque = 2
     }
 }

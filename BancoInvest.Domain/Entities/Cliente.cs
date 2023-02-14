@@ -1,5 +1,4 @@
-﻿using BancoInvest.Domain.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +16,6 @@ namespace BancoInvest.Domain.Entities
         public string Login { get; set; }
         public string Password { get; set; }
         public bool Ativo { get; set; }
-        public List<IConta> Contas { get; set; }
+        public List<Conta> Contas { get; set; }
     }
 }
