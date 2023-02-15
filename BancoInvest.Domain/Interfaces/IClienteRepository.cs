@@ -9,6 +9,7 @@ namespace BancoInvest.Domain.Interfaces
 {
     public interface IClienteRepository
     {
+        Task<Cliente> ConsultaLogin(string login);
         Task<Cliente> GetCliente(int id);
         Task<List<Cliente>> GetAll();
         

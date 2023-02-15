@@ -12,16 +12,22 @@ namespace BancoInvest.Infra.Data.Context
         }
 
         public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Movimento> Movimentos { get; set; }
         public DbSet<ContaCorrente> ContaCorrentes { get; set; }
+        public DbSet<Movimento> Movimentos { get; set; }
+        
 
-       protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ClienteMap());
             modelBuilder.ApplyConfiguration(new ContaCorrenteMap());
             modelBuilder.ApplyConfiguration(new MovimentoMap());
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
     }

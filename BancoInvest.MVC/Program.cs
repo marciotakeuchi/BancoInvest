@@ -1,5 +1,6 @@
 using BancoInvest.Infra.Data.Context;
 using BancoInvest.Infra.IoC;
+using BancoInvest.MVC.MappingConfig;
 using Microsoft.EntityFrameworkCore;
 
 namespace BancoInvest.MVC
@@ -13,25 +14,26 @@ namespace BancoInvest.MVC
             
 
             builder.AddInfrastruture();
+            builder.AddAutoMapperConfiguration();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
-            //using (var scope = app.Services.CreateScope())
-            //{
-            //    var services = scope.ServiceProvider;
-            //    try
-            //    {
-            //        var context = services.GetRequiredService<ApplicationDbContext>();
-            //        context.Database.Migrate();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-            //        logger.LogError(ex, "ocorreu um erro na Migração ou alimentãção dos dados.");
-            //    }
-            //}
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    context.Database.Migrate();
+                }
+                catch (Exception ex)
+                {
+                    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "ocorreu um erro na Migração ou alimentãção dos dados.");
+                }
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -50,7 +52,7 @@ namespace BancoInvest.MVC
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Login}/{action=Index}/{id?}");
 
             app.Run();
         }

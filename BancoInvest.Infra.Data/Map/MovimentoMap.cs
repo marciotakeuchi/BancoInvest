@@ -10,7 +10,9 @@ namespace BancoInvest.Infra.Data.Map
     {
         public void Configure(EntityTypeBuilder<Movimento> builder)
         {
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.Resumo).HasMaxLength(500);
+            builder.ToTable("Movimento");
         }
     }
 }

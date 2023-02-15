@@ -20,11 +20,11 @@ namespace BancoInvest.Infra.Data.Map
             builder.Property(x => x.Email).HasMaxLength(200).IsRequired();
             builder.Property(x => x.Login).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Password).HasMaxLength(100).IsRequired();
-            builder.HasMany(x => x.Contas).WithOne(x => x.Cliente).HasForeignKey(x => x.ClienteId);
+            builder.HasMany(x => x.ContaCorrentes);
             builder.ToTable("Cliente");
 
             builder.HasData(
-                new Cliente()
+                new Cliente
                 {
                     Id = 1,
                     NomeCompleto = "Joao Pedro Silva",
@@ -35,7 +35,7 @@ namespace BancoInvest.Infra.Data.Map
                     Password = "123456",
                     Ativo = true,
                 },
-                  new Cliente()
+                  new Cliente
                   {
                       Id = 2,
                       NomeCompleto = "Maria Lima da Costa",

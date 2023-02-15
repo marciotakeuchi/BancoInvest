@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BancoInvest.Domain.Entities
+﻿namespace BancoInvest.Domain.Entities
 {
     public class Cliente
     {
@@ -16,6 +10,6 @@ namespace BancoInvest.Domain.Entities
         public string Login { get; set; }
         public string Password { get; set; }
         public bool Ativo { get; set; }
-        public virtual List<Conta> Contas { get; set; }
+        public List<ContaCorrente> ContaCorrentes { get; set; }
     }
 }

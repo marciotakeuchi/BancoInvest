@@ -6,11 +6,13 @@ namespace BancoInvest.Application.Interfaces
     {
         Task<ClienteViewModel> GetCliente(int id);
         Task<List<ClienteViewModel>> GetAll();
-        
+
+        Task<ClienteViewModel> ConsultaLogin(string login);
+
         void Insert(ClienteViewModel cliente);
         void Update(ClienteViewModel cliente);
         void Delete(int id);
 
-
+        
     }
 }

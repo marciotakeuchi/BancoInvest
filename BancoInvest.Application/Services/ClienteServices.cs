@@ -50,5 +50,12 @@ namespace BancoInvest.Application.Services
             Cliente clienteConvertido = _mapper.Map<Cliente>(cliente);
             _clienteRepository.Update(clienteConvertido);
         }
+
+        public async Task<ClienteViewModel> ConsultaLogin(string login)
+        {
+            var resultado =  await _clienteRepository.ConsultaLogin(login);
+            return _mapper.Map<ClienteViewModel>(resultado);
+
+        }
     }
 }

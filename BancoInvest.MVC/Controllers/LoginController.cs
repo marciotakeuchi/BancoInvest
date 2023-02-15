@@ -1,4 +1,6 @@
-﻿using BancoInvest.Application.Models;
+﻿using BancoInvest.Application.Interfaces;
+using BancoInvest.Application.Models;
+using BancoInvest.Domain.Interfaces;
 using BancoInvest.MVC.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +9,12 @@ namespace BancoInvest.MVC.Controllers
 {
     public class LoginController : Controller
     {
+        private readonly IClienteServices _clienteServices;
+        public LoginController(IClienteServices clienteServices)
+        {
+            _clienteServices = clienteServices;
+        }
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Index()
@@ -20,7 +28,7 @@ namespace BancoInvest.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var result = await 
+               // var result = await _clienteServices. 
                 return RedirectToAction("Index", "Home");
             }
 

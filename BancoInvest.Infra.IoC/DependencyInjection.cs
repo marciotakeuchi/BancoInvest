@@ -1,15 +1,12 @@
-﻿using BancoInvest.Infra.Data.Context;
+﻿using BancoInvest.Application.Interfaces;
+using BancoInvest.Application.Services;
+using BancoInvest.Domain.Interfaces;
+using BancoInvest.Infra.Data.Context;
+using BancoInvest.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Protocols;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BancoInvest.Infra.IoC
 {
@@ -23,6 +20,9 @@ namespace BancoInvest.Infra.IoC
                 options.UseSqlServer(connectionString);
 
             });
+
+            builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+            builder.Services.AddScoped<IClienteServices, ClienteServices>();
 
             return builder;
         }

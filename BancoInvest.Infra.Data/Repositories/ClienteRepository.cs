@@ -43,5 +43,10 @@ namespace BancoInvest.Infra.Data.Repositories
             _context.Remove(cliente);
             _context.SaveChanges();
         }
+
+        public async Task<Cliente> ConsultaLogin(string login)
+        {
+           return await _context.Clientes.Where(x => x.Login == login).FirstAsync();
+        }
     }
 }
