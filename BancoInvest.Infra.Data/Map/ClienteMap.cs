@@ -32,7 +32,7 @@ namespace BancoInvest.Infra.Data.Map
                     DataNascimento = new DateTime(2000, 05, 12),
                     Email = "joao.silva@teste.com",
                     Login = "joao.silva",
-                    Password = "123456",
+                    Password = "0RmgyFBHATgzGX+hbHrxsNbgCIk6tWDUlBt6DK/P/4mvOplZ",
                     Ativo = true,
                 },
                   new Cliente
@@ -43,9 +43,10 @@ namespace BancoInvest.Infra.Data.Map
                       DataNascimento = new DateTime(2002, 09, 08),
                       Email = "maria.costa@teste.com",
                       Login = "maria.costa",
-                      Password = "123456",
+                      Password = "0RmgyFBHATgzGX+hbHrxsNbgCIk6tWDUlBt6DK/P/4mvOplZ",
                       Ativo = true,
                   }
+                  //Password is Teste@1234
                 );
         }
     }

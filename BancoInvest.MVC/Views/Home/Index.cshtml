@@ -1,11 +1,55 @@
-﻿@{
+﻿@using BancoInvest.Application.ViewModel;
+@model ClienteViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bem vindo ao Banco Invest</h1>
+<div>
+    <h1 class="display-4 text-center">Bem vindo ao Banco Invest</h1>
     <br />
     <br />
-    <p>Saldo atual: R$ 0,00</p>
-    <p>Conta criada em @DateTime.Today.ToShortDateString()</p>
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-md-5 border border-1">
+                @if (Model.Contas.Count > 0)
+                {
+                    @foreach (var item in Model.Contas)
+                    {
+                        <div class="alert-primary p-2 m-2">
+                            <p></p>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Conta @item.Numero.ToString("D5")/@item.Agencia.ToString("D3")
+                                </div>
+                                <div class="col-sm-6 text-end">
+                                    Criado em @item.DataCriacao.ToShortDateString()
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">Saldo atual:</div>
+                                <div class="col-md-6 text-end"><span>@item.Saldo.ToString("C")</span></div>
+                            </div>
+
+                            <p></p>
+                        </div>
+
+                    }
+                }
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-4 border border-1">
+                <ul>
+                    <li><a href="#">Conta Correte</a></li>
+                    <li><a href="#">Extrato</a></li>
+                    <li><a href="#">Pix</a></li>
+                    <li><a href="#">Transferências</a></li>
+                </ul>
+            </div>
+          
+        </div>
+    </div>
+
 </div>

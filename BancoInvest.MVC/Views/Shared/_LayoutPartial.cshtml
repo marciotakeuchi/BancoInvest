@@ -1,0 +1,14 @@
+﻿@using BancoInvest.Application.Security;
+@using BancoInvest.Application.ViewModel;
+@inject ISessaoServices session;
+@{
+    ClienteViewModel cliente = session.BuscarSessaoCliente();
+}
+<ul class="navbar-nav">
+  <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" title="UsuarioLogIn">Saudações @cliente.NomeCompleto</a>
+  </li>
+  <li class="nav-item">
+        <a class="nav-link text-dark" asp-action="Logoff" asp-controller="Login">Logout</a>
+  </li>
+</ul>

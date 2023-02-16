@@ -90,8 +90,8 @@ namespace BancoInvest.Infra.Data.Migrations
                 columns: new[] { "Id", "Ativo", "Cpf", "DataNascimento", "Email", "Login", "NomeCompleto", "Password" },
                 values: new object[,]
                 {
-                    { 1, true, "12345678911", new DateTime(2000, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "joao.silva@teste.com", "joao.silva", "Joao Pedro Silva", "123456" },
-                    { 2, true, "98765432100", new DateTime(2002, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "maria.costa@teste.com", "maria.costa", "Maria Lima da Costa", "123456" }
+                    { 1, true, "12345678911", new DateTime(2000, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "joao.silva@teste.com", "joao.silva", "Joao Pedro Silva", "0RmgyFBHATgzGX+hbHrxsNbgCIk6tWDUlBt6DK/P/4mvOplZ" },
+                    { 2, true, "98765432100", new DateTime(2002, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "maria.costa@teste.com", "maria.costa", "Maria Lima da Costa", "0RmgyFBHATgzGX+hbHrxsNbgCIk6tWDUlBt6DK/P/4mvOplZ" }
                 });
 
             migrationBuilder.CreateIndex(

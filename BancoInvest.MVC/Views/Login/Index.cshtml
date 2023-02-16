@@ -1,9 +1,9 @@
 ﻿@model LoginViewModel
 @{
-    Layout = null;
+    Layout = "_LayoutDisconectado";
 }
 
-<!DOCTYPE html>
+@*<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,25 +11,26 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-    <title>Wehry Home Page</title>
-    <style>
-        /* Created with https://www.css-gradient.com */
-        body {
-            background: conic-gradient(from 90deg, #52AFD0, #577B94);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <form asp-controller="Login" asp-action="Index" method="post">
-        <div class="row g-0" style="margin-top:100px">
+    <title>Wehry Home Page</title>*@
+<style>
+    /* Created with https://www.css-gradient.com */
+    body {
+        background: conic-gradient(from 90deg, #52AFD0, #577B94);
+    }
+</style>
+@*</head>
+<body>*@
+<div class="container">
+
+    <form asp-controller="Login" asp-action="Index" method="post">
+        <div class="row g-0" style="margin-top:70px">
             <div class="col-md-4 mx-auto bg-white bg-opacity-75 p-4 mt-5 align-content-center">
                 <h1 class="text-center"><b>Banco Invest</b></h1>
                 <h3 class="text-center">Seu banco simplificado</h3>
                 <hr />
                 <div class="form-floating text-end">
                     <div class="form-floating mb-3 mt-3">
-                        <input asp-for="Login" class="form-control" autocomplete="username" aria-required="true"/>
+                        <input asp-for="Login" class="form-control" autocomplete="username" aria-required="true" />
                         <label asp-for="Login" class="form-label"></label>
                         <span asp-validation-for="Login" class="text-danger"></span>
                     </div>
@@ -38,12 +39,12 @@
                         <label asp-for="Password" class="form-label"></label>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-                    
+
                     <button type="submit" value="Login" class="btn btn-primary">Login</button>
                 </div>
             </div>
         </div>
-        </form>
-    </div>
-</body>
-</html>
+    </form>
+</div>
+@*</body>
+</html>*@

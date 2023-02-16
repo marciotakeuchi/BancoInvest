@@ -5,11 +5,11 @@ namespace BancoInvest.Application.Models
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="Campo Login é obrigatório.")]
         [DisplayName("Usuario")]
         public string Login { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Campo senha obrigatório.")]
         [DataType(DataType.Password)]
         public string  Password { get; set; }
 

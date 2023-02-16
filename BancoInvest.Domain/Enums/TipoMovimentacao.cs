@@ -9,6 +9,8 @@ namespace BancoInvest.Domain.Enums
     public enum TipoMovimentacao
     {
         Deposito = 1,
-        Saque = 2
+        Saque = 2,
+        TransferenciaEntrada = 3,
+        TransferenciaSaida = 4
     }
 }

@@ -20,7 +20,7 @@ namespace BancoInvest.Infra.Data.Repositories
 
         public async Task<Cliente> GetCliente(int id)
         {
-            return  await _context.Clientes.FindAsync(id);
+            return await _context.Clientes.FindAsync(id);
         }
         public async Task<List<Cliente>> GetAll()
         {
@@ -46,7 +46,9 @@ namespace BancoInvest.Infra.Data.Repositories
 
         public async Task<Cliente> ConsultaLogin(string login)
         {
-           return await _context.Clientes.Where(x => x.Login == login).FirstAsync();
+            var result = await _context.Clientes.Where(x => x.Login.ToLower() == login.ToLower()).ToListAsync();
+            return result.FirstOrDefault();
+
         }
     }
 }

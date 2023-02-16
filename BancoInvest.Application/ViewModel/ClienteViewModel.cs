@@ -1,4 +1,5 @@
-﻿using BancoInvest.Domain.Entities;
+﻿using BancoInvest.Application.Security;
+using BancoInvest.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,9 @@ namespace BancoInvest.Application.ViewModel
 
         [DisplayName("Senha")]
         [DataType(DataType.Password)]
+        [MinLength(8, ErrorMessage = "Informe 8 ou mais caracteres.")]
+        [RegularExpression(@"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()<>]).{8,})",
+         ErrorMessage = "Informe letras maiusculas e minusculas, numeros e caracteres especiais !@#$%&*()<>.")]
         public string Password { get; set; }
 
         [DisplayName("Repetir Senha")]
@@ -49,6 +53,11 @@ namespace BancoInvest.Application.ViewModel
         [Compare("Password",ErrorMessage ="As senhas devem ser iguais")]
         public string ConfirmPassword { get; set; }
         public bool Ativo { get; set; }
-        public virtual List<Conta> Contas { get; set; }
+        public virtual List<ContaCorrenteViewModel> Contas { get; set; }
+
+        public bool SenhaValida(string senha)
+        {
+            return Password == senha.GerarHash();
+        }
     }
 }
